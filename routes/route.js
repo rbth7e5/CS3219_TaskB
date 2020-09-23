@@ -2,7 +2,7 @@ let router = require('express').Router();
 router.get('/', function (req, res) {
     res.json({
         status: "success",
-        message: 'The API is working with nodemon!'
+        message: 'The API is working!'
     });
 });
 
