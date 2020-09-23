@@ -14,10 +14,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error connecting to db'));
 db.once('open', console.error.bind(console, 'Db connected successfully'));
 
-app.use(routes);
-app.get('/', (req, res) => res.json({
-    status: "success",
-    message: 'The API is working!'
-}));
+app.use('/api', routes);
 
 module.exports = app

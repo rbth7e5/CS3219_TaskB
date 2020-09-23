@@ -1,6 +1,12 @@
 let router = require('express').Router();
 // Import contact controller
 let contactController = require('../controllers/contact-controller');
+
+router.get('/', (req, res) => res.json({
+    status: "success",
+    message: 'The API is working!'
+}));
+
 // Contact routes
 router.route('/contacts')
     .get(contactController.index)
