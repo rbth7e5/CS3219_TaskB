@@ -22,4 +22,9 @@ app.listen(port, function () {
     console.log("Running Task B on port " + port);
 });
 
+app.handler = async function(event, context) {
+    console.log("EVENT: \n" + JSON.stringify(event, null, 2))
+    return context.logStreamName
+}
+
 module.exports = app;
