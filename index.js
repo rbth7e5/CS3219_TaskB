@@ -19,7 +19,4 @@ db.once('open', console.error.bind(console, 'Db connected successfully'));
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/api', routes);
 
-module.exports = {
-    handler: serverless(app),
-    app: app
-};
+module.exports = app
