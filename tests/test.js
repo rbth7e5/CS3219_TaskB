@@ -26,8 +26,7 @@ describe("Contacts", () => {
                     res.body.data.should.be.a('object');
                     res.body.data.should.have.property('name').equal('Caijie');
                     done();
-                })
-                .catch(done);
+                });
         });
         it("should not get any contact", (done) => {
             const id = "wrongid";

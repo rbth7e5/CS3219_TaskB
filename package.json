@@ -4,7 +4,7 @@
   "description": "CS3219 Task B",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/*.js --exit"
+    "test": "mocha --timeout 5000 tests/*.js --exit"
   },
   "repository": {
     "type": "git",
