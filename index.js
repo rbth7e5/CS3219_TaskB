@@ -1,7 +1,8 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let mongoose = require('mongoose');
-let routes = require('./routes/route');
+const serverless = require('serverless-http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const routes = require('./routes/route');
 const app = express();
 const port = process.env.PORT || 8080;
 const dbUsername = process.env.DBUSERNAME;
@@ -18,13 +19,4 @@ db.once('open', console.error.bind(console, 'Db connected successfully'));
 app.get('/', (req, res) => res.send('Hello World!'));
 app.use('/api', routes);
 
-app.listen(port, function () {
-    console.log("Running Task B on port " + port);
-});
-
-app.handler = async function(event, context) {
-    console.log("EVENT: \n" + JSON.stringify(event, null, 2))
-    return context.logStreamName
-}
-
-module.exports = app;
+module.exports.handler = serverless(app);
