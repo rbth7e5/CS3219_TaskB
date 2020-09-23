@@ -12,5 +12,6 @@ deploy:
     secure: ghS1zCklfSeih9nyz3C8dCF2TOKOy34xMERdlRusjSwbLlJDMOXsAaKDBFhWVqA8Ac/goTrZwykGCaoc9xBmTQS0Ddpz8bWs4KETyRjZB7B7vYjc3NX1Z8KwuJD3rSLtKauhJkVdhUaiXOrcDU4FhkhI1w17t6IMTSWm0FKMfBjJs461wp9fAVi35Jng6G0XiG2SmhMhgcv4+V9rCwyuu+NF2Sf32fuwLgEwoIBuW/IDGnemR96eH0I6sl99He3s6UyVFHDGkI0FwFI4Y4c2sgzbt49o9aO/l9calMLpCFirAP+evmNQL0HdndLYhCiCWk3p1IeXIPycANU+HRW6RFp613QfNGMu8yO6gpvFSEtvTXP7NESMkzNKdYFxwz9iTP4wQlODLSFQyFQ+pRz1C1fy7QFpY00HnAWabEx5her7yhMGbJWc/Z/HZ5GLZQARUAg9ZQqf6BPNOrY3Ak2O/LNGieFXhQbFM+Ykq5bJRkZ6W454XPQ3OH86C/NQv8pRgMSbwviucDhjpzzr7hw+qOexfb7ia1tkipXhPIBsbtMiG31zkbgbCfGd/GuvTnN3xhzRu1Qwb9VLGi2pfDFce6wF7PpBHkncasndbfW6tP7eh3YZJ0R982glwp/Cin4A7+hI2/97pUsdPWrD5pACNra5hYz+8LQTkBlUYAJzp/g=
   function_name: taskb-deploy
   role: "arn:aws:iam::425563513848:role/travis"
-  handler_name: "lambda.handler"
+  handler_name: "handler"
+  module_name: "lambda"
   edge: true
