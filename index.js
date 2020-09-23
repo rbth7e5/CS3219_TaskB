@@ -2,13 +2,12 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let routes = require('./routes/route');
-let app = express();
+const app = express();
 const port = process.env.PORT || 8080;
 const dbUsername = process.env.DBUSERNAME;
 const dbPassword = process.env.DBPASSWORD;
 
 const uri = `mongodb+srv://${dbUsername}:${dbPassword}@peerprep.bzetx.mongodb.net/assignment?retryWrites=true&w=majority`;
-console.log(uri);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -22,3 +21,5 @@ app.use('/api', routes);
 app.listen(port, function () {
     console.log("Running Task B on port " + port);
 });
+
+module.exports = app;
