@@ -1,0 +1,5 @@
+language: node_js
+node_js:
+  - 14
+script: DBUSERNAME=CS3219Admin DBPASSWORD=cs3219admin npm run test
+dist: trusty
