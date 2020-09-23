@@ -1,10 +1,8 @@
-const serverless = require('serverless-http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes/route');
 const app = express();
-const port = process.env.PORT || 8080;
 const dbUsername = process.env.DBUSERNAME;
 const dbPassword = process.env.DBPASSWORD;
 
