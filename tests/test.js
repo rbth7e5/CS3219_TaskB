@@ -16,17 +16,6 @@ describe("Contacts", () => {
                     done();
                 });
         });
-        it("should get a single contact", (done) => {
-            const id = "5f6ab423d135730b11bab8d4";
-            chai.request(app)
-                .get(`/api/contacts/${id}`)
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.data.should.be.a('object');
-                    res.body.data.should.have.property('_id').equal(id);
-                    done();
-                });
-        });
         it("should not get any contact", (done) => {
             const id = "wrongid";
             chai.request(app)
@@ -37,7 +26,7 @@ describe("Contacts", () => {
                 });
         });
     });
-  describe("POST, PUT, DELETE /", () => {
+  describe("POST, PUT, DELETE, GET /", () => {
     let id = '';
     it("should add new contact", (done) => {
       chai.request(app)
@@ -49,6 +38,16 @@ describe("Contacts", () => {
           res.body.data.should.have.property('name').equal('test');
           res.body.data.should.have.property('_id');
           id = res.body.data['_id'];
+          done();
+        });
+    });
+    it("should get a single contact", (done) => {
+      chai.request(app)
+        .get(`/api/contacts/${id}`)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.data.should.be.a('object');
+          res.body.data.should.have.property('_id').equal(id);
           done();
         });
     });
