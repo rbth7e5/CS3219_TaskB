@@ -18,7 +18,7 @@ POST Body:
 
 ## Running locally
 1. Get the MongoDB login username and password from me
-2. Run `DBUSERNAME=<username> DBPASSWORD=<password> nodemon local.js` from the project root
+2. Run `DBUSERNAME=<username> DBPASSWORD=<password> node local.js` from the project root
 
 ## Accessing deployed API
 The deployed API is hosted with AWS Lambda and AWS API Gateway at the following url:
@@ -29,3 +29,8 @@ Just append the supported endpoints defined above to access the different reques
 ## Running tests
 1. To run tests locally, just run `DBUSERNAME=<username> DBPASSWORD=<password> npm run tests`, with the username and password provided.
 2. Travis automatically runs tests once a branch is pushed into the [repo](https://travis-ci.org/github/rbth7e5/CS3219_TaskB).
+
+## Setup Frontend
+1. In the project root, `cd frontend`
+2. Do `npm install`
+3. Run the React App locally by doing `npm start`
