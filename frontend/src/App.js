@@ -34,6 +34,14 @@ function App() {
       .then(response => response.json())
       .then(result => alert(result.message));
   }
+  const handleUpdate = (contact) => {
+    fetch(`${uri}/contacts/${contact._id}`, {
+      method: 'PUT',
+      body: JSON.stringify(contact)
+    }).catch(error => alert(`Update contact failed: ${error}`))
+      .then(response => response.json())
+      .then(result => alert(result.message));
+  }
   return (
     <Container>
       <Navbar>
