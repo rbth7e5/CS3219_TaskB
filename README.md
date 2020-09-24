@@ -34,3 +34,4 @@ Just append the supported endpoints defined above to access the different reques
 1. In the project root, `cd frontend`
 2. Do `npm install`
 3. Run the React App locally by doing `npm start`
+The React App supports simple CRUD of contacts using the APIs written.

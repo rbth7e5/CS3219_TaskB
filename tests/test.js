@@ -13,7 +13,6 @@ describe("Contacts", () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
-                    res.body.data.should.have.lengthOf(2);
                     done();
                 });
         });
@@ -24,7 +23,7 @@ describe("Contacts", () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.data.should.be.a('object');
-                    res.body.data.should.have.property('name').equal('Caijie');
+                    res.body.data.should.have.property('_id').equal(id);
                     done();
                 });
         });
