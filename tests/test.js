@@ -37,4 +37,41 @@ describe("Contacts", () => {
                 });
         });
     });
+  describe("POST, PUT, DELETE /", () => {
+    let id = '';
+    it("should add new contact", (done) => {
+      chai.request(app)
+        .post('/api/contacts/')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({name: 'test', gender: 'male', email: 'test@gmail.com', phone: '12345678'})
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.data.should.have.property('name').equal('test');
+          res.body.data.should.have.property('_id');
+          id = res.body.data['_id'];
+          done();
+        });
+    });
+    it("should edit contact", (done) => {
+      chai.request(app)
+        .put(`/api/contacts/${id}`)
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({name: 'test', gender: 'female', email: 'test@gmail.com', phone: '12345678'})
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.data.should.have.property('name').equal('test');
+          res.body.data.should.have.property('_id').equal(id);
+          res.body.data.should.have.property('gender').equal('female');
+          done();
+        });
+    });
+    it("should delete contact", (done) => {
+      chai.request(app)
+        .delete(`/api/contacts/${id}`)
+        .end((err, res) => {
+          res.should.have.status(200);
+          done();
+        });
+    });
+  });
 });
