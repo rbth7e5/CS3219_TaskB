@@ -8,7 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
 function App() {
-  const uri = 'http://localhost:8080/api';
+  const uri = 'https://3a3opn0d5c.execute-api.ap-southeast-1.amazonaws.com/prod/api';
   const [contacts, setContacts] = useState([]);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
