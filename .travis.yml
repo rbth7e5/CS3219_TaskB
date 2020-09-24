@@ -15,8 +15,9 @@ deploy:
   handler_name: handler
   module_name: lambda
   environment:
-  - DBUSERNAME: $DBUSERNAME
-  - DBPASSWORD: $DBPASSWORD
+    secure:
+      - DBUSERNAME: $DBUSERNAME
+      - DBPASSWORD: $DBPASSWORD
   edge: true
 env:
   global:
