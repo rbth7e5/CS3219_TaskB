@@ -14,6 +14,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error connecting to db'));
 db.once('open', console.error.bind(console, 'Db connected successfully'));
 
-app.use('/api', routes);
+app.use(routes);
 
 module.exports = app
